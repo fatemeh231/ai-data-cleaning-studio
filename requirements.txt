@@ -1,10 +1,10 @@
 # Core
-pandas>=2.0.0
-numpy>=1.24.0
+pandas>=2.0.0,<2.3.0
+numpy>=1.24.0,<2.0.0
 streamlit>=1.28.0
 
-# Data Profiling
-ydata-profiling>=4.0.0
+# Data Profiling - Pin to compatible version
+ydata-profiling==4.13.0
 
 # PII Detection
 presidio-analyzer>=2.2.0
@@ -23,3 +23,6 @@ openpyxl>=3.0.0
 
 # Utilities
 python-dotenv>=1.0.0
+
+# Pin numba to compatible version
+numba==0.59.1
