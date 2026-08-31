@@ -1,175 +1,176 @@
-# 📊 CFO Cockpit — Financial Planning & Forecasting Dashboard
+# 🧹 AI Data Cleaning Studio
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-red.svg)](https://streamlit.io/)
-[![Prophet](https://img.shields.io/badge/Prophet-1.1%2B-green.svg)](https://facebook.github.io/prophet/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Production-brightgreen.svg)]()
+> Turn messy spreadsheets into clean, analysis-ready datasets in seconds — powered by AI.
 
-> **Interactive revenue forecasting dashboard for 46 major US companies using Prophet AI and SEC EDGAR data.**
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
+[![License](https://img.shields.io/badge/License-Commercial-orange.svg)](LICENSE)
 
 ---
 
-## 🚀 Live Demo
+## ✨ Features
 
-🔗 **[View the live dashboard](https://gterhgbry2fswa2r6f5rmy.streamlit.app/)
-
----
-
-## 📖 Overview
-
-This project is a complete **financial planning & forecasting tool** for CFOs and finance teams. It:
-
-- ✅ **Extracts** 26 quarters of real financial data from SEC EDGAR (2.6GB of raw data)
-- ✅ **Cleans** and standardizes revenue data for 46 major US companies
-- ✅ **Forecasts** revenue 12 quarters ahead using Facebook Prophet (AI)
-- ✅ **Visualizes** historical trends and future predictions
-- ✅ **Simulates** "what‑if" scenarios (growth rate, marketing spend)
-- ✅ **Deploys** as an interactive web app (Streamlit)
+| Feature | Description |
+|---------|-------------|
+| 📊 **Auto-Profile** | Instantly see missing values, duplicates, outliers, and correlations |
+| 🧹 **Auto-Clean** | 10 core cleaning operations (dates, text, numeric, categories, duplicates, missing values) |
+| 🔒 **PII Detection** | Find emails, phone numbers, and IDs (GDPR/HIPAA ready) |
+| 📄 **PDF Reports** | Professional data quality report with your branding |
+| 💾 **Export** | Download cleaned data as CSV, Excel, or Parquet |
 
 ---
 
-## 🏢 Companies Included
+## 🎯 Who Needs This
 
-| Sector | Companies |
-|--------|-----------|
-| **Technology** | Apple, Microsoft, Google, Amazon, Meta, Nvidia, Tesla, Broadcom, AMD, Oracle, Intel, Cisco, Salesforce, Netflix |
-| **Financials** | JPMorgan, Bank of America, Visa, Mastercard, Wells Fargo, Citigroup, Goldman Sachs |
-| **Healthcare** | Johnson & Johnson, Eli Lilly, Pfizer, AbbVie, Merck, UnitedHealth |
-| **Energy** | Exxon Mobil, Chevron, ConocoPhillips |
-| **Retail** | Walmart, Costco, Home Depot, Nike, Starbucks |
-| **Communications** | Disney, AT&T, Verizon |
-| **Industrials** | GE, Caterpillar, Boeing |
-| **Other** | Berkshire Hathaway, Palantir, Uber, Shopify |
-
-**Total: 46 companies | 1,302 revenue records**
-
----
-
-## 📸 Dashboard Preview
-
-![CFO Cockpit Dashboard](output/dashboard_preview.png)
-
-*Interactive dashboard showing revenue trends, AI forecasts, and scenario analysis.*
+| Industry | Why They Need It |
+|----------|------------------|
+| **Consulting** | Clean client data quickly |
+| **SMEs** | No data team; need self-service |
+| **Healthcare** | Detect and mask PII (HIPAA) |
+| **Finance** | Clean transaction data |
+| **Retail** | Clean sales data |
+| **Any Industry** | Data quality is universal |
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| **Data Extraction** | Python, Pandas, SEC EDGAR (sub.txt, num.txt) |
-| **Data Cleaning** | Pandas, NumPy |
-| **Forecasting** | Facebook Prophet (time-series AI) |
-| **Visualization** | Plotly, Matplotlib |
-| **Dashboard** | Streamlit |
-| **Deployment** | Streamlit Cloud / ngrok |
+| Component | Technology |
+|-----------|------------|
+| **Frontend** | Streamlit |
+| **Data Processing** | Pandas, NumPy |
+| **Data Profiling** | YData Profiling |
+| **PII Detection** | Microsoft Presidio |
+| **PDF Generation** | ReportLab |
+| **Containerization** | Docker |
 
 ---
 
-## 📁 Project Structure
+## 📦 Installation
 
-cfo-cockpit/
-│
-├── app/
-│ └── app.py # Main Streamlit dashboard
-│
-├── data/
-│ └── processed/
-│ └── all_companies_revenue.csv # Combined dataset (46 companies)
-│
-├── src/
-│ ├── extract_all_companies.py # Extraction pipeline
-│ └── extract_ciks_from_files.py # CIK mapping
-│
-├── output/ # Screenshots & exports
-├── requirements.txt # Python dependencies
-└── README.md # This file
-text
-
-
----
-
-## 🔧 Installation
-
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/fatemeh231/cfo-cockpit.git
-cd cfo-cockpit
+git clone https://github.com/fatemeh231/ai-data-cleaning-studio.git
+cd ai-data-cleaning-studio
+```
 
-2. Install Dependencies
-bash
+### 2. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
-3. Run the Dashboard Locally
-bash
+### 3. Run the app
 
-streamlit run app/app.py
+```bash
+streamlit run app/streamlit_app.py
+```
 
-🏃 Usage
-Run the Dashboard
-bash
+### 4. Open your browser
 
-streamlit run app/app.py
+Navigate to `http://localhost:8501`
 
-Run the Extraction Pipeline (Optional)
+---
 
-If you want to refresh the data:
-bash
+## 🐳 Docker Deployment
 
-python src/extract_all_companies.py
+```bash
+# Build the image
+docker build -t ai-data-cleaning-studio .
 
-📊 Features
-Feature	Description
-📈 Historical Revenue	Line chart showing 26 quarters of real data
-🔮 AI Forecasting	Prophet predicts 12 quarters ahead with confidence intervals
-📊 Company Selector	Dropdown to switch between 46 companies
-🧠 Scenario Analysis	Adjust growth rate (%) and marketing spend ($M)
-📋 Forecast Table	View exact numbers for future quarters
-📱 Responsive	Works on desktop, tablet, and mobile
-📌 Key Insights
-Metric	Value
-Total Companies	46
-Total Records	1,302
-Date Range	2018 – 2026
-Data Source	SEC EDGAR (2.6GB raw data)
-Average Accuracy	95%+ confidence intervals
-🧠 How the Forecast Works
+# Run the container
+docker run -p 8501:8501 ai-data-cleaning-studio
+```
 
-    Prophet (Facebook/Meta's time-series library) analyzes historical revenue patterns.
+---
 
-    It detects seasonality (quarterly patterns), trends (growth/decline), and holiday effects.
 
-    It generates a forecast with confidence intervals (shaded blue area).
 
-    Users can apply "what-if" scenarios to see how changes affect future revenue.
+```
 
-🚀 Deployment
-Streamlit Cloud
+```
 
-📝 Data Sources
-Source	Description
-SEC EDGAR	Official financial filings for all US public companies
-sub.txt	Company metadata (CIK, name, filing type)
-num.txt	Financial numbers (revenue, assets, liabilities)
-🛡️ License
+---
 
-This project is licensed under the MIT License – see the LICENSE file for details.
-🤝 Connect with Me
+## 💼 Commercial Licensing
 
-I'm a Data Engineer & Web Scraping Specialist focused on building end-to-end data pipelines and interactive dashboards.
+This project is **source-available** for personal and educational use.
 
-https://img.shields.io/badge/LinkedIn-Seyedeh%2520Fatemeh%2520Hosseininasab-blue?style=for-the-badge&logo=linkedin
-https://img.shields.io/badge/GitHub-fatemeh231-black?style=for-the-badge&logo=github
-https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail
-📝 Author
+**For commercial use**, you need a license. Contact me for:
 
-Seyedeh Fatemeh Hosseininasab
-Data Engineer | Web Scraping Specialist | NLP Enthusiast
+| Feature | Demo | Full |
+|---------|------|------|
+| Row Limit | 1,000 | Unlimited |
+| PII Detection | ✅ | ✅ |
+| PII Masking | ❌ | ✅ |
+| Outlier Detection | ❌ | ✅ |
+| Batch Processing | ❌ | ✅ |
+| Custom Rules | ❌ | ✅ |
+| White-label Branding | ❌ | ✅ |
+| Self-hosted Deployment | ❌ | ✅ |
+| Priority Support | ❌ | ✅ |
 
-Built with ❤️ as a complete brand intelligence and financial forecasting project.
-⭐ Show Your Support
+---
 
-If you found this project helpful, please give it a ⭐ on GitHub!
+## 📊 Sample Results
+
+Testing with a messy employee dataset (1,000 rows, 25 columns):
+
+| Metric | Result |
+|--------|--------|
+| Duplicates Removed | 12 |
+| PII Detected | **1,892** (emails, phones, IDs) |
+| Missing Values Fixed | Multiple columns |
+| Categories Standardized | Gender, Department, Country |
+
+---
+
+## 📞 Contact
+
+| Method | Contact |
+|--------|---------|
+| 📧 Email | seyedehfatemehhosseininasab2@gmail.com |
+| 💬 Telegram | [@Fateme_Hosseini1294](https://t.me/Fateme_Hosseini1294) |
+| 🔗 LinkedIn | [Connect with me](https://www.linkedin.com/in/seyedeh-fatemeh-hosseininasab-7320bb322/) |
+| 🐙 GitHub | [@fatemeh231](https://github.com/fatemeh231) |
+
+---
+
+## 📄 License
+
+© 2024-2026 SEYEDEH FATEMEH HOSSEININASAB
+
+This project is **NOT open source**. All rights reserved.
+
+- **Personal/Educational use:** Free for learning and non-commercial projects
+- **Commercial use:** Requires a paid license. Contact for pricing
+
+---
+
+## ⭐ Support
+
+If you find this project helpful:
+- ⭐ Star the repository
+- 🔗 Share it with your network
+- 📧 Reach out for commercial inquiries
+
+---
+
+## 🙏 Acknowledgments
+
+- [Streamlit](https://streamlit.io/) for the amazing web framework
+- [YData Profiling](https://github.com/ydataai/ydata-profiling) for data profiling
+- [Microsoft Presidio](https://github.com/microsoft/presidio) for PII detection
+- [ReportLab](https://www.reportlab.com/) for PDF generation
+
+---
+
+**Built with ❤️ by SEYEDEH FATEMEH HOSSEININASAB**
+```
+
+---
+
+## 📁 How to Save It
+---
+
