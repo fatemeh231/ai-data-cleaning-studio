@@ -169,8 +169,3 @@ If you find this project helpful:
 **Built with ❤️ by SEYEDEH FATEMEH HOSSEININASAB**
 ```
 
----
-
-## 📁 How to Save It
----
-
